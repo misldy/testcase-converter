@@ -525,7 +525,7 @@ class TestCaseConverter:
                 else:
                     self.logger.warning(f"工作表 '{sheet_title}' 未找到测试用例")
 
-            output_path = self.output_directory / f"{self.file_name}.xlsx"
+            output_path = self.output_directory / f"{self.file_name}_{uuid.uuid4()}.xlsx"
             self.excel_wb.save(filename=output_path)
             
             duration = (datetime.datetime.now() - start_time).total_seconds()
